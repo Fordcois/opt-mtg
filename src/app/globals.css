@@ -27,6 +27,37 @@ body {
   color: rgb(125, 125, 125);
   bottom:.5%;
   right: 0.5%;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
 }
 
+.carousel-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Carousel */
+.embla {
+  max-width: 48rem;
+  margin: auto;
+  --slide-height: 550px;
+  --slide-spacing: 20px;
+  --slide-size: 550px
+}
+.embla__viewport {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  touch-action: pan-x pinch-zoom;
+  margin-top: calc(var(--slide-spacing) * -1);
+  height: calc(var(--slide-spacing) + var(--slide-height));
+  flex-direction: column;
+}
+.embla__slide {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 var(--slide-size);
+  min-height: 0;
+  padding-top: var(--slide-spacing);
+}

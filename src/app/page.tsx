@@ -1,4 +1,5 @@
-import { EmblaCarousel } from "@/components/carousel";
+import EmblaCarousel from "@/components/carousel";
+import CardPile from "@/components/cardpile";
 export default function Home() {
   const name = 'DuskMourns'
   return (
@@ -8,7 +9,8 @@ export default function Home() {
       <img className='set-Logo' src="/Logo/logo_duskmourn.png"/>
       <div className="carousel-container">
         
-        <EmblaCarousel/>
+        {/* <EmblaCarousel/> */}
+        <CardPile/>
         </div>
     </div>
   );

@@ -66,12 +66,14 @@ body {
 .swiper {
   position: absolute;
   left: 25%;
-  width: 355px;
-  height: 500px;
+  width: 488px;
+  height: 680px;
 }
+
 
 .swiper-slide {
   display: flex;
+  border-radius: 25px;
   align-items: center;
   justify-content: center;
   color: #fff;

@@ -52,7 +52,7 @@ const ScryFallSetCaller: React.FC = () => {
         }
     };
 
-    fetchCards(`https://api.scryfall.com/cards/search?q=-type:basic(game:paper)set:${setCode}`);
+    fetchCards(`https://api.scryfall.com/cards/search?order=set&q=-type:basic(game:paper)set:${setCode}`);
     }, [setCode]);
 
     return (

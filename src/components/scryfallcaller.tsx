@@ -1,26 +1,11 @@
 'use client';
 import React, { useEffect, useState, useRef } from 'react';
+import { Card } from '@/types/types';
 import CardPile from './cardpile';
 
-interface ScryfallCard {
-id: string;
-name: string;
-image_uris: {normal: string;};
-}
 
-interface Card {
-id: string;
-imageUrl: string;
-altText: string;
-}
-
-interface ScryFallSetCallerProps {
-    setCode: string;
-}
-
-
-const ScryFallSetCaller: React.FC<ScryFallSetCallerProps> = ({setCode}) => {
-    const [cards, setCards] = useState<Card[]>([]);
+const ScryFallSetCaller: React.FC<{ setCode: string }> = ({setCode}) => {
+    const [cardArray, setCardArray] = useState<Card[]>([]);
     const [error, setError] = useState<string | null>(null);
     const fetchedRef = useRef(false);
 
@@ -35,19 +20,14 @@ const ScryFallSetCaller: React.FC<ScryFallSetCallerProps> = ({setCode}) => {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
+        console.log(data)
         
-        const transformedCards = data.data
-            .filter((card: ScryfallCard) => card.image_uris && card.image_uris.normal)
-            .map((card: ScryfallCard) => ({
-            id: card.id,
-            imageUrl: card.image_uris.normal,
-            altText: card.name,
-            }));
-          setCards(transformedCards); // Replace instead of append
 
+        setCardArray(data.data)
+
+        // TODO - For Larger sets the JSON is over multiple pages - This will need to be explored and then appended
         if (data.has_more) {
-            // Instead of recursive call, you might want to implement pagination here
-            console.log('More cards available');
+            console.log('More Cards To Be Loaded')
         }
         } catch (err) {
         setError('Failed to fetch cards.');
@@ -60,8 +40,8 @@ const ScryFallSetCaller: React.FC<ScryFallSetCallerProps> = ({setCode}) => {
     return (
     <div style={{ color: 'white', textAlign: 'center' }}>
         {error && <div>{error}</div>}
-        {cards.length > 0 ? (
-        <CardPile cardList={cards} />
+        {cardArray.length > 0 ? (
+        <CardPile cardList={cardArray} />
         ) : (
         <div>Loading...</div>
         )}

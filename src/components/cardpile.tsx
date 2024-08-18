@@ -5,18 +5,9 @@ import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import { EffectCards, Keyboard, Virtual } from 'swiper/modules';
+import { Card } from '@/types/types';
 
-interface Card {
-  id: string;
-  altText: string;
-  imageUrl: string;
-}
-
-interface CardPileProps {
-  cardList: Card[];
-}
-
-const CardPile: React.FC<CardPileProps> = ({ cardList }) => {
+const CardPile: React.FC<{ cardList: Card[] }> = ({ cardList }) => {
 const [activeIndex, setActiveIndex] = useState(0);
 
 return (
@@ -52,8 +43,8 @@ return (
             return shouldLoadImage ? (
             <div className={index===activeIndex?'active-card':'not-active-card'}>
                 <Image
-                    src={card.imageUrl}
-                    alt={card.altText}
+                    src={card.image_uris.normal}
+                    alt={card.name}
                     width={488}
                     height={680}
                     priority={index === activeIndex}

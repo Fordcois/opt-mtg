@@ -1,12 +1,15 @@
 'use client';
 import React, { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 import { Card } from '@/types/types';
 import CardPile from './cardpile';
+import DescriptionBox from './descriptionbox';
 
 
 const ScryFallSetCaller: React.FC<{ setCode: string }> = ({setCode}) => {
     const [cardArray, setCardArray] = useState<Card[]>([]);
     const [error, setError] = useState<string | null>(null);
+    const [activeIndex, setActiveIndex] = useState(0);
     const fetchedRef = useRef(false);
 
     useEffect(() => {
@@ -41,9 +44,10 @@ const ScryFallSetCaller: React.FC<{ setCode: string }> = ({setCode}) => {
     <div style={{ color: 'white', textAlign: 'center' }}>
         {error && <div>{error}</div>}
         {cardArray.length > 0 ? (
-        <CardPile cardList={cardArray} />
-        ) : (
-        <div>Loading...</div>
+
+        <CardPile cardList={cardArray} activeIndex={activeIndex} setActiveIndex={setActiveIndex}/>
+    ) : (
+            <Image src="/setsymbols/dsk_setsymbol.svg" alt="DSK Set Symbol" width={500} height={500} style={{color:'white'}}/>
         )}
 
     </div>

@@ -7,8 +7,13 @@ import 'swiper/css/effect-cards';
 import { EffectCards, Keyboard, Virtual } from 'swiper/modules';
 import { Card } from '@/types/types';
 
-const CardPile: React.FC<{ cardList: Card[] }> = ({ cardList }) => {
-const [activeIndex, setActiveIndex] = useState(0);
+const CardPile: React.FC<{
+  cardList: Card[];
+  activeIndex: number;
+  setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
+}> = ({ cardList, activeIndex, setActiveIndex }) => {
+
+
 
 return (
   <>
@@ -57,7 +62,7 @@ return (
         </SwiperSlide>
       ))}
     </Swiper>
-    <div style={{ color: 'white', fontSize: '5rem' }}>Current Index: {activeIndex}</div>
+    {/* <div style={{ color: 'white', fontSize: '5rem' }}>Current Index: {activeIndex}</div> */}
   </>
 );
 };

@@ -40,24 +40,27 @@ return (
         perSlideRotate: 5,
         perSlideOffset: 5,
         rotate: true,
-        slideShadows: true,
+        slideShadows: false,
       }}>
       {cardList.map((card, index) => (
         <SwiperSlide key={card.id} virtualIndex={index}>
+          
           {({ isActive, isVisible }) => {
-            const shouldLoadImage = isActive || isVisible || 
-              (index >= activeIndex - 4 && index <= activeIndex + 4);
+            
+            const shouldLoadImage = isActive || isVisible || (index >= activeIndex - 4 && index <= activeIndex + 4);
             
             return shouldLoadImage ? (
-              <Image
-                src={card.imageUrl}
-                alt={card.altText}
-                width={488}
-                height={680}
-                priority={index === activeIndex}
-              />
+            <div className={index===activeIndex?'active-card':'not-active-card'}>
+                <Image
+                    src={card.imageUrl}
+                    alt={card.altText}
+                    width={488}
+                    height={680}
+                    priority={index === activeIndex}
+                />
+            </div>
             ) : (
-              <div style={{ width: 488, height: 680 }}></div>
+            <div style={{ width: 488, height: 680 }}></div>
             );
           }}
         </SwiperSlide>

@@ -14,10 +14,14 @@ imageUrl: string;
 altText: string;
 }
 
-const ScryFallSetCaller: React.FC = () => {
+interface ScryFallSetCallerProps {
+    setCode: string;
+}
+
+
+const ScryFallSetCaller: React.FC<ScryFallSetCallerProps> = ({setCode}) => {
     const [cards, setCards] = useState<Card[]>([]);
     const [error, setError] = useState<string | null>(null);
-    const setCode = 'khm';
     const fetchedRef = useRef(false);
 
     useEffect(() => {

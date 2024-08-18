@@ -12,6 +12,7 @@ body {
   width: auto;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 
 .set-Logo{

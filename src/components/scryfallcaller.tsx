@@ -5,9 +5,7 @@ import CardPile from './cardpile';
 interface ScryfallCard {
 id: string;
 name: string;
-image_uris: {
-    normal: string;
-};
+image_uris: {normal: string;};
 }
 
 interface Card {
@@ -19,7 +17,7 @@ altText: string;
 const ScryFallSetCaller: React.FC = () => {
     const [cards, setCards] = useState<Card[]>([]);
     const [error, setError] = useState<string | null>(null);
-    const setCode = 'dsk';
+    const setCode = 'khm';
     const fetchedRef = useRef(false);
 
     useEffect(() => {

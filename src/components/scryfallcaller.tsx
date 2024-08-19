@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Card } from '@/types/types';
 import CardPile from './cardpile';
 import DescriptionBox from './descriptionbox';
+import DSK_setSymbol from '@/app/assets/dsk_setsymbol';
 
 
 const ScryFallSetCaller: React.FC<{ setCode: string }> = ({setCode}) => {
@@ -47,7 +48,10 @@ const ScryFallSetCaller: React.FC<{ setCode: string }> = ({setCode}) => {
 
         <CardPile cardList={cardArray} activeIndex={activeIndex} setActiveIndex={setActiveIndex}/>
     ) : (
-            <Image src="/setsymbols/dsk_setsymbol.svg" alt="DSK Set Symbol" width={500} height={500} style={{color:'white'}}/>
+
+        <div className='pulse' style={{marginLeft:'100px'}}>
+            <DSK_setSymbol width="244px" height="auto"/>
+        </div>
         )}
 
     </div>

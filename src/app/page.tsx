@@ -1,24 +1,29 @@
-import CardPile from "@/components/cardpile";
+'use client'
 import ScryFallCaller from "@/components/scryfallcaller";
+
+import DSK_setSymbol from "./assets/dsk_setsymbol";
+import KHM_setSymbol from "./assets/khm_setsymbol";
 
 const sets = {
   kaldheim: {
     setName: 'Kaldheim',
     setCode: 'khm',
     setLogo: '/Logo/khm_logo.webp',
+    setSymbol: KHM_setSymbol,
     setBackGround: '/Background/khm_background.jpg'
   },
   duskmourn: {
     setName: 'Duskmourn: House of Horror',
     setCode: 'dsk',
     setLogo: '/Logo/dsk_logo.png',
+    setSymbol: DSK_setSymbol,
     setBackGround: '/Background/dsk_background.jpg'
   }
 };
 
 export default function Home() {
 
-const SelectedSet = sets.duskmourn;
+const SelectedSet = sets.kaldheim;
 
 return (
   <div 
@@ -31,7 +36,7 @@ return (
     <img className='set-Logo' src={SelectedSet.setLogo} alt={`${SelectedSet.setName} Logo`} />
     
     <div className="carousel-container">
-      <ScryFallCaller setCode={SelectedSet.setCode}/>
+      <ScryFallCaller setCode={SelectedSet.setCode} setSymbol={SelectedSet.setSymbol}/>
     </div>
 
 

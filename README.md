@@ -38,3 +38,7 @@ npm run dev
 5. Open the Application:
 
 Visit http://localhost:3000 in your browser to see the application in action.
+
+## Credits and Acknowledgements
+
+MTG artwork and vectors are sourced from the [MTG Vectors repository](https://github.com/Investigamer/mtg-vectors) by Investigamer.

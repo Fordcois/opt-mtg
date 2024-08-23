@@ -133,7 +133,6 @@ body {
   display: flex;
   flex-direction: column;
   width: 100px;
-  margin-left: 500px;
 }
 
 .loading-message-container{

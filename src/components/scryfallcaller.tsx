@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Card } from '@/types/types';
 import CardPile from './cardpile';
 import DescriptionBox from './descriptionbox';
+import Loading_Planeswalker_symbol from '@/app/assets/loading_planeswalker';
 
 
 const ScryFallSetCaller: React.FC<{ setCode: string, setSymbol: React.FC<{ width: string; height: string }> }> = ({ setCode, setSymbol: SetSymbol }) => {
@@ -41,13 +42,17 @@ const ScryFallSetCaller: React.FC<{ setCode: string, setSymbol: React.FC<{ width
     return (
         <div style={{ color: 'white', textAlign: 'center' }}>
             {error && <div>{error}</div>}
-            {cardArray.length > 0 ? (
+            {cardArray.length < 0 ? (
                 <CardPile cardList={cardArray} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
             ) : (
-                <div className='pulse' style={{ marginLeft: '100px' }}>
-                    {/* Use the component as a JSX tag */}
-                    <SetSymbol width="244px" height="auto" />
-                </div>
+<div style={{
+  height: '100px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}}>
+  <Loading_Planeswalker_symbol />
+</div>
             )}
         </div>
     );

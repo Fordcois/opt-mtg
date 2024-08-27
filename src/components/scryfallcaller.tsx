@@ -44,14 +44,11 @@ const ScryFallSetCaller: React.FC<{ setCode: string, setSymbol: React.FC<{ width
             {error && <div>{error}</div>}
             {cardArray.length > 0 ? (
                 <CardPile cardList={cardArray} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+                // <DescriptionBox card={cardArray[activeIndex]}/>
+
+
             ) : (
-<div style={{
-  height: '100px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  marginLeft:'500px'
-}}>
+<div className='loading-container'>
   <Loading_Planeswalker_symbol />
 </div>
             )}

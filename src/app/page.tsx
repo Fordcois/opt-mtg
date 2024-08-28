@@ -23,7 +23,7 @@ const sets = {
 
 export default function Home() {
 
-const SelectedSet = sets.kaldheim;
+const SelectedSet = sets.duskmourn;
 
 return (
   <div 

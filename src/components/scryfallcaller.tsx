@@ -43,8 +43,10 @@ const ScryFallSetCaller: React.FC<{ setCode: string, setSymbol: React.FC<{ width
         <div style={{ color: 'white', textAlign: 'center' }}>
             {error && <div>{error}</div>}
             {cardArray.length > 0 ? (
+                <div>
                 <CardPile cardList={cardArray} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
-                // <DescriptionBox card={cardArray[activeIndex]}/>
+                <DescriptionBox card={cardArray[activeIndex]}/>
+                </div>
 
 
             ) : (

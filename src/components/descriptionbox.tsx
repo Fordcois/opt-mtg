@@ -13,11 +13,13 @@ const DescriptionBox: React.FC<{ card: Card }> = ({ card }) => {
 return (
     <div className='description-container'>
     <h2>{card.name}</h2>
+    {matches?.toString()}
 
     {/* Break the Mana cost into a list */}
     {card.mana_cost && (
             <span>
                 Cost: 
+
                 {matches.map(cost => (
                     <Manapip key={cost} size={25} colour={cost} />
                 ))}

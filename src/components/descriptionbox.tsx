@@ -3,30 +3,22 @@ import Manapip from './manapip';
 import { Card } from '@/types/types';
 
 const DescriptionBox: React.FC<{ card: Card }> = ({ card }) => {
-
-    const matches = card.mana_cost 
+  const matches = card.mana_cost
     ? card.mana_cost.match(/\{(.*?)\}/g)?.map(match => match.slice(1, -1))
     : [];
-    console.log(matches)
 
-
-return (
+  return (
     <div className='description-container'>
-    <h2>{card.name}</h2>
-    {matches?.toString()}
-
-    {/* Break the Mana cost into a list */}
-    {card.mana_cost && (
-            <span>
-                Cost: 
-
-                {matches.map(cost => (
-                    <Manapip key={cost} size={25} colour={cost} />
-                ))}
-                <br />
-            </span>
-        )}
-
+      <h2>{card.name}</h2>
+      {matches && (
+        <span>
+          Cost:
+          {matches.map((pip, index) => (
+            <Manapip key={index} size={25} colour={pip} />
+          ))}
+          <br />
+        </span>
+      )}
 
 
 

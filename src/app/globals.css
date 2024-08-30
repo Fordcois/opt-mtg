@@ -171,9 +171,56 @@ body {
 }
 
 .description-container{
-  color: green;
-  background-color: aqua;
+  position: absolute;
+  bottom:50%;
+  right: 25%;
+  z-index: 2;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: start;
+  width: 488px;
+}
+
+.rarity-common{
+  width: 15px;  /* or any width you desire */
+  height: 15px; /* or any height you desire */
+  border-radius: 50%;
+  background-color: black;
+}
+.rarity-uncommon{
+  width: 15px;  /* or any width you desire */
+  height: 15px; /* or any height you desire */
+  border-radius: 50%;
+  background-color: silver;
+}
+.rarity-rare{
+  width: 15px;  /* or any width you desire */
+  height: 15px; /* or any height you desire */
+  border-radius: 50%;
+  background-color: gold;
+}
+.rarity-mythic{
+  width: 15px;  /* or any width you desire */
+  height: 15px; /* or any height you desire */
+  border-radius: 50%;
+  background-color: orange;
+}
+
+.card-desc-line{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+
+.card-line{
+  display: flex;
+}
+
+.desc-right-italic{
+  text-align: right;
+  font-style: italic;
+  width: 100%;
 }

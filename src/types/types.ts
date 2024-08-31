@@ -10,6 +10,7 @@ export interface Card {
   artist: string | null;
   flavor_text: string | null;
   rarity: string | null;
+  oracle_text: string | null;
   image_uris: {
     small: string;
     normal: string;

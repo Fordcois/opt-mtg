@@ -28,10 +28,35 @@ const DescriptionBox: React.FC<{ card: Card }> = ({ card }) => {
       
       {/* Cost */}
       
+      {card.oracle_text && (
+  <div>
+    {card.oracle_text
+      .split(/(\{.*?\}|\n)/) // Split by either the `{...}` pattern or `\n`
+      .map((segment, index) => {
+        if (segment === '\n') {
+          // Handle line breaks
+          return <br key={index} />;
+        }
+
+        const match = segment.match(/\{(.*?)\}/); // Check if the segment matches the `{...}` pattern
+        if (match) {
+          return (
+            <Manapip key={index} size={20} colour={match[1]} /> // Render the `Manapip` component for the matched text
+          );
+        }
+
+        // Render normal text
+        return (
+          <React.Fragment key={index}>
+            {segment}
+          </React.Fragment>
+        );
+      })}
+  </div>
+)}
+
+
   
-
-
-
     {card.power && card.toughness && <span>{card.power} / {card.toughness}<br/> </span>}
     {card.loyalty && <span>Loyalty: {card.loyalty} <br/> </span>}
     {card.flavor_text && <div className='desc-right-italic'>{card.flavor_text}  </div>}

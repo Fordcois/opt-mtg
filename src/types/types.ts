@@ -1,8 +1,9 @@
-
+// TODO solidify card_faces Type
 export interface Card {
   id: string;
   name: string;
   loyalty: string | null;
+  card_faces: any;
   mana_cost: string | null;
   power: string | null;
   toughness: string | null;

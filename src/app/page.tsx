@@ -18,12 +18,19 @@ const sets = {
     setLogo: '/Logo/dsk_logo.png',
     setSymbol: DSK_setSymbol,
     setBackGround: '/Background/dsk_background.jpg'
-  }
+  },
+  foundations: {
+    setName: 'Magic the Gathering: Foundations',
+    setCode: 'fdn',
+    setLogo: '/Logo/fdn_logo.png',
+    setSymbol: DSK_setSymbol,
+    setBackGround: '/Background/fdn_background.jpg'
+  },
 };
 
 export default function Home() {
 
-const SelectedSet = sets.duskmourn;
+const SelectedSet = sets.foundations;
 
 return (
   <div 

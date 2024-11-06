@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Duskmourn: House of Horror - Opt",
+  title: "Magic Foundations - Opt",
   description: "See the upcoming sets in Magic The Gathering - A site made for content creators to showcase previewed cards",
 };
 

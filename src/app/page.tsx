@@ -12,13 +12,6 @@ const sets = {
     setSymbol: KHM_setSymbol,
     setBackGround: '/Background/khm_background.jpg'
   },
-  duskmourn: {
-    setName: 'Duskmourn: House of Horror',
-    setCode: 'dsk',
-    setLogo: '/Logo/dsk_logo.png',
-    setSymbol: DSK_setSymbol,
-    setBackGround: '/Background/dsk_background.jpg'
-  },
   foundations: {
     setName: 'Magic the Gathering: Foundations',
     setCode: 'fdn',
@@ -35,9 +28,7 @@ const SelectedSet = sets.foundations;
 return (
   <div 
     className="Homepage-Background"
-    style={{
-    backgroundImage: `linear-gradient(90deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${SelectedSet.setBackGround})`
-    }}
+    style={{backgroundImage: `linear-gradient(90deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${SelectedSet.setBackGround})`}}
   >
 
     <img className='set-Logo' src={SelectedSet.setLogo} alt={`${SelectedSet.setName} Logo`} />

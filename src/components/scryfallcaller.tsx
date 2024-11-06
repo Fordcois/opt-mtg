@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useState, useRef } from 'react';
+import { getCards } from '@/lib/api/getCards';
 import Image from 'next/image';
 import { Card } from '@/types/types';
 import CardPile from './cardpile';
@@ -13,32 +14,16 @@ const ScryFallSetCaller: React.FC<{ setCode: string, setSymbol: React.FC<{ width
     const [activeIndex, setActiveIndex] = useState(0);
     const fetchedRef = useRef(false);
 
-    useEffect(() => {
-        const fetchCards = async (url: string) => {
-            if (fetchedRef.current) return; 
-            fetchedRef.current = true;
-
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data = await response.json();
-                console.log(data);
-
-                setCardArray(data.data);
-
-                if (data.has_more) {
-                    console.log('More Cards To Be Loaded');
-                }
-            } catch (err) {
-                setError('Failed to fetch cards.');
-            }
-        };
-
-        fetchCards(`https://api.scryfall.com/cards/search?order=set&q=-type:basic(game:paper)set:${setCode}`);
+useEffect(() => {
+    const fetchCards = async () => {
+        try {
+        setCardArray(await getCards(`https://api.scryfall.com/cards/search?order=set&q=-type:basic(game:paper)set:${setCode}`));
+        } catch (err) {
+        setError("Failed to fetch cards");
+        }
+    };
+    fetchCards();
     }, [setCode]);
-
     return (
         <div style={{ color: 'white', textAlign: 'center' }}>
             {error && <div>{error}</div>}

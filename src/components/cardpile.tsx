@@ -62,7 +62,6 @@ return (
         </SwiperSlide>
       ))}
     </Swiper>
-    {/* <div style={{ color: 'white', fontSize: '5rem' }}>Current Index: {activeIndex}</div> */}
   </>
 );
 };

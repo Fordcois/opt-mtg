@@ -1,18 +1,17 @@
 'use client';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState} from 'react';
 import { getCards } from '@/lib/api/getCards';
-import Image from 'next/image';
-import { Card } from '@/types/types';
 import CardPile from './cardpile';
 import DescriptionBox from './descriptionbox';
 import Loading_Planeswalker_symbol from '@/app/assets/loading_planeswalker';
+// Types
+import { Card } from '@/types/types';
 
 
-const ScryFallSetCaller: React.FC<{ setCode: string, setSymbol: React.FC<{ width: string; height: string }> }> = ({ setCode, setSymbol: SetSymbol }) => {
+const ScryFallSetCaller: React.FC<{ setCode: string,showCardText:boolean}> = ({ setCode, showCardText }) => {
     const [cardArray, setCardArray] = useState<Card[]>([]);
     const [error, setError] = useState<string | null>(null);
     const [activeIndex, setActiveIndex] = useState(0);
-    const fetchedRef = useRef(false);
 
 useEffect(() => {
     const fetchCards = async () => {
@@ -24,23 +23,24 @@ useEffect(() => {
     };
     fetchCards();
     }, [setCode]);
+
     return (
         <div style={{ color: 'white', textAlign: 'center' }}>
             {error && <div>{error}</div>}
             {cardArray.length > 0 ? (
                 <div>
-                <CardPile cardList={cardArray} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
-                <DescriptionBox card={cardArray[activeIndex]}/>
+                    <CardPile cardList={cardArray} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+                    {showCardText && 
+                        <DescriptionBox card={cardArray[activeIndex]}/>
+                    }
                 </div>
-
-
             ) : (
-<div className='loading-container'>
-  <Loading_Planeswalker_symbol />
-</div>
+            <div className='loading-container'>
+            <Loading_Planeswalker_symbol />
+            </div>
             )}
         </div>
     );
-};
+    };
 
 export default ScryFallSetCaller;

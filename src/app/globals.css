@@ -1,7 +1,12 @@
+:root{
+    --Grey: rgb(125, 125, 125);
+}
+
 body {
   margin: 0;
   padding: 0;
 }
+
 .Homepage-Background {
   display: flex;
   position: relative;
@@ -22,11 +27,33 @@ body {
   top:.5%;
   right: 0.5%;
 }
-.copyright{
+.reactIcon {
+  font-size: 1.75rem;
+  padding: .25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  transition: background-color 0.3s;
+}
+.ActiveIcon {
+  background-color: red;
+}
+
+.InactiveIcon {
+  background-color: green;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;    /* Aligns content to the bottom */
+  align-items: flex-end;        /* Aligns content to the right */
   height: auto;
   position: absolute;
-  color: rgb(125, 125, 125);
-  bottom:.5%;
+  color: var(--Grey);
+  bottom: 0.5%;
   right: 0.5%;
   font-size: 0.7rem;
 }
@@ -140,11 +167,10 @@ body {
   display: flex;
   width: 100%;
   justify-content: center;
-  align-content: end;
+  align-content: flex-end;
 }
 
 
-/* HTML: <div class="loader"></div> */
 .loader {
   width: 60px;
   aspect-ratio: 4;
@@ -178,32 +204,32 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   width: 488px;
   text-align: left;
 }
 
 .rarity-common{
-  width: 15px;  /* or any width you desire */
-  height: 15px; /* or any height you desire */
+  width: 15px; 
+  height: 15px; 
   border-radius: 50%;
   background-color: black;
 }
 .rarity-uncommon{
-  width: 15px;  /* or any width you desire */
-  height: 15px; /* or any height you desire */
+  width: 15px; 
+  height: 15px; 
   border-radius: 50%;
   background-color: silver;
 }
 .rarity-rare{
-  width: 15px;  /* or any width you desire */
-  height: 15px; /* or any height you desire */
+  width: 15px; 
+  height: 15px; 
   border-radius: 50%;
   background-color: gold;
 }
 .rarity-mythic{
-  width: 15px;  /* or any width you desire */
-  height: 15px; /* or any height you desire */
+  width: 15px; 
+  height: 15px; 
   border-radius: 50%;
   background-color: orange;
 }

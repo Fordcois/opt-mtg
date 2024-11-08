@@ -19,21 +19,19 @@ const sets = {
 };
 
 export default function Home() {
-  const [showCardText,setShowCardText] = useState(false)
-  const [showBackGround,setShowBackground] = useState(false)
+  const [showCardText,setShowCardText] = useState(true)
+  const [showBackGround,setShowBackground] = useState(true)
   const SelectedSet = sets.foundations;
 
 return (
-  <div
+<div
   className="Homepage-Background"
   style={{
     backgroundImage: showBackGround
       ? `linear-gradient(90deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${SelectedSet.setBackGround})`
-      : undefined,
-    backgroundColor: showBackGround ? undefined : 'rgb(0,255,0)'
+      : 'none'
   }}
-  >
-
+>
     <img className='set-Logo' src={SelectedSet.setLogo} alt={`${SelectedSet.setName} Logo`} />
     
     <div className="carousel-container">
@@ -46,16 +44,18 @@ return (
         <TbArticleFilled
           className={`reactIcon ${showCardText ? 'ActiveIcon' : 'InactiveIcon'}`}
           onClick={() => setShowCardText(!showCardText)}
+          title={showCardText? 'Hide Card Text': 'Show Card Text'}
         />
         <TbBackground
           className={`reactIcon ${showBackGround ? 'ActiveIcon' : 'InactiveIcon'}`}
           onClick={() => setShowBackground(!showBackGround)}
+          title={showBackGround? 'Hide Background': 'Show Background'}
         />
-
       </div>
-      <p>Magic: The Gathering is copyright Wizards of the Coast, LLC. Opt is not produced by or endorsed by Wizards of the Coast.</p>
+      <p>
+        Magic: The Gathering is copyright Wizards of the Coast, LLC. Opt is not produced by or endorsed by Wizards of the Coast.
+      </p>
     </div>
-
   </div>
-);
-}
+);};
+

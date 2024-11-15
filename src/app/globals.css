@@ -95,9 +95,8 @@ body {
 }
 
 /* Swiper */
-/* width 488 - height 680 */
-/* 	
 
+/*
 Asepct Ratios
   61	85
 	122	170
@@ -109,23 +108,48 @@ Asepct Ratios
 	427	595
 	488	680
 
-
 	549	765
-	610	850 */
+	610	850 
+  */
 
 .swiper {
   position: absolute;
   left: 25%;
   width: 305px;
   height: 425px;
+  background-color: aqua;
+}
+ /* Minimum width 366px, minimum height 510px */
+@media (min-width: 386px) and (min-height: 530px) {
+  .swiper {
+    width: 366px;
+    height: 510px;
+    background-color: red;
+  }
 }
 
+ /* Minimum width 427px, minimum height 595px */
+@media (min-width: 447px) and (min-height: 615px) {
+  .swiper {
+    width: 427px;
+    height: 595px;
+    background-color: green;
+  }
+}
 
+/* Minimum width 488px, minimum height 680px */
+@media (min-width: 508px) and (min-height: 700px) {
+  .swiper {
+    width: 488px;
+    height: 680px;
+    background-color: gold;
+  }
+}
 
 .swiper-slide {
   display: flex;
   /* RELEVANT - Modify this Value */
-  border-radius: 5%;
+  border-radius: 3%;
   align-items: center;
   justify-content: center;
   color: #fff;

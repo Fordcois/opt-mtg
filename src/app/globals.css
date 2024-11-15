@@ -95,17 +95,37 @@ body {
 }
 
 /* Swiper */
+/* width 488 - height 680 */
+/* 	
+
+Asepct Ratios
+  61	85
+	122	170
+	183	255
+	244	340
+
+	305	425
+	366	510
+	427	595
+	488	680
+
+
+	549	765
+	610	850 */
+
 .swiper {
   position: absolute;
   left: 25%;
-  width: 488px;
-  height: 680px;
+  width: 305px;
+  height: 425px;
 }
+
 
 
 .swiper-slide {
   display: flex;
-  border-radius: 25px;
+  /* RELEVANT - Modify this Value */
+  border-radius: 5%;
   align-items: center;
   justify-content: center;
   color: #fff;

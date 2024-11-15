@@ -50,9 +50,9 @@ return (
                 <Image
                     src={card.image_uris.normal}
                     alt={card.name}
-                    width={488}
-                    height={680}
                     priority={index === activeIndex}
+                    fill
+                    style={{ objectFit: 'cover' }} 
                 />
             </div>
             ) : (

@@ -38,6 +38,8 @@ return (
       <ScryFallCaller setCode={SelectedSet.setCode} showCardText={showCardText}/>
     </div>
 
+
+    {/* Options Buttons */}
     <div className="copyright">
       <div className="icons-container">
 

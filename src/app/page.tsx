@@ -1,7 +1,7 @@
 'use client'
 import ScryFallCaller from "@/components/scryfallcaller";
 import { useState } from "react";
-import { TbArticleFilled,TbBackground } from "react-icons/tb";
+import { TbArticleFilled,TbBackground,TbCircleLetterLFilled } from "react-icons/tb";
 
 const sets = {
   kaldheim: {
@@ -19,8 +19,9 @@ const sets = {
 };
 
 export default function Home() {
-  const [showCardText,setShowCardText] = useState(true)
-  const [showBackGround,setShowBackground] = useState(true)
+  const [showCardText,setShowCardText] = useState(true);
+  const [showBackGround,setShowBackground] = useState(true);
+  const [showLogo,setShowLogo] = useState(true);
   const SelectedSet = sets.foundations;
 
 return (
@@ -32,7 +33,9 @@ return (
       : 'none'
   }}
 >
-    <img className='set-Logo' src={SelectedSet.setLogo} alt={`${SelectedSet.setName} Logo`} />
+    {showLogo &&
+      <img className='set-Logo' src={SelectedSet.setLogo} alt={`${SelectedSet.setName} Logo`} />
+    }
     
     <div className="carousel-container">
       <ScryFallCaller setCode={SelectedSet.setCode} showCardText={showCardText}/>
@@ -53,9 +56,17 @@ return (
           onClick={() => setShowBackground(!showBackGround)}
           title={showBackGround? 'Hide Background': 'Show Background'}
         />
+        <TbCircleLetterLFilled
+          className={`reactIcon ${showLogo ? 'ActiveIcon' : 'InactiveIcon'}`}
+          onClick={() => setShowLogo(!showLogo)}
+          title={showLogo? 'Hide Logo': 'Show Logo'}
+        />
       </div>
       <p>
-        Magic: The Gathering is copyright Wizards of the Coast, LLC. Opt is not produced by or endorsed by Wizards of the Coast.
+        {showBackGround? 
+        'Magic: The Gathering is copyright Wizards of the Coast, LLC. Opt is not produced by or endorsed by Wizards of the Coast.'
+        : 
+        '\u00A0'}
       </p>
     </div>
   </div>

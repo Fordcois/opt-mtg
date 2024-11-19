@@ -4,17 +4,17 @@ import { useState } from "react";
 import { TbArticleFilled,TbBackground,TbCircleLetterLFilled } from "react-icons/tb";
 
 const sets = {
-  kaldheim: {
-    setName: 'Kaldheim',
-    setCode: 'khm',
-    setLogo: '/Logo/khm_logo.webp',
-    setBackGround: '/Background/khm_background.jpg'
-  },
   foundations: {
     setName: 'Magic the Gathering: Foundations',
     setCode: 'fdn',
     setLogo: '/Logo/fdn_logo.png',
     setBackGround: '/Background/fdn_background.jpg'
+  },
+  aetherdrift: {
+    setName: 'Aetherdrift',
+    setCode: 'dft',
+    setLogo: '/Logo/dft_logo.png',
+    setBackGround: '/Background/dft_background.jpg'
   },
 };
 
@@ -22,7 +22,7 @@ export default function Home() {
   const [showCardText,setShowCardText] = useState(true);
   const [showBackGround,setShowBackground] = useState(true);
   const [showLogo,setShowLogo] = useState(true);
-  const SelectedSet = sets.foundations;
+  const SelectedSet = sets.aetherdrift;
 
 return (
 <div

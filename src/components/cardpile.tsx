@@ -31,7 +31,7 @@ return (
         cache: true,
       }}
       onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-      onSwiper={(swiper) => console.log('Swiper instance:', swiper)}
+    
       cardsEffect={{
         perSlideRotate: 5,
         perSlideOffset: 5,

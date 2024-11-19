@@ -4,8 +4,6 @@ import ManaCost from './manacost';
 import { Card } from '@/types/types';
 
 const DescriptionBox: React.FC<{ card: Card }> = ({ card }) => {
-console.log(card)
-
 return (
     <div className='description-container'>
       <div className='card-desc-line'>

@@ -2,6 +2,7 @@
 import ScryFallCaller from "@/components/scryfallcaller";
 import { useState } from "react";
 import { TbArticleFilled,TbBackground,TbCircleLetterLFilled } from "react-icons/tb";
+import Image from "next/image";
 
 const sets = {
   foundations: {
@@ -22,7 +23,7 @@ export default function Home() {
   const [showCardText,setShowCardText] = useState(true);
   const [showBackGround,setShowBackground] = useState(true);
   const [showLogo,setShowLogo] = useState(true);
-  const SelectedSet = sets.aetherdrift;
+  const SelectedSet = sets.foundations;
 
 return (
 <div
@@ -34,12 +35,12 @@ return (
   }}
 >
     {showLogo &&
-      <img className='set-Logo' src={SelectedSet.setLogo} alt={`${SelectedSet.setName} Logo`} />
+      <Image className='set-Logo' src={SelectedSet.setLogo} alt={`${SelectedSet.setName} Logo`} width={660} height={180}/>
     }
     
-    <div className="carousel-container">
+  
       <ScryFallCaller setCode={SelectedSet.setCode} showCardText={showCardText}/>
-    </div>
+
 
 
     {/* Options Buttons */}

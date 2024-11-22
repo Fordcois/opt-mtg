@@ -24,23 +24,22 @@ useEffect(() => {
     fetchCards();
     }, [setCode]);
 
-    return (
-        <div style={{ color: 'white', textAlign: 'center' }}>
-            {error && <div>{error}</div>}
-            {cardArray.length > 0 ? (
-                <div>
-                    <CardPile cardList={cardArray} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
-                    {showCardText && 
-                        <DescriptionBox card={cardArray[activeIndex]}/>
-                    }
-                </div>
-            ) : (
-            <div className='loading-container'>
-            <Loading_Planeswalker_symbol />
-            </div>
-            )}
+return (
+    <div className='full-width-height'>
+        {error && <div>{error}</div>}
+        {cardArray.length > 0 ? (
+        <div className='centered-container'>
+            <CardPile cardList={cardArray} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+            {showCardText && 
+                <DescriptionBox card={cardArray[activeIndex]}/>
+            }
         </div>
-    );
-    };
+        ) : (
+        <div className='centered-container'>
+            <Loading_Planeswalker_symbol />
+        </div>
+        )}
+    </div>
+);};
 
 export default ScryFallSetCaller;

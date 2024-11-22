@@ -7,6 +7,11 @@ body {
   padding: 0;
 }
 
+.full-width-height{
+  width: 100%;
+  height: 100%;
+}
+
 .Homepage-Background {
   display: flex;
   position: relative;
@@ -62,10 +67,12 @@ body {
   font-size: 0.7rem;
 }
 
-.carousel-container{
+.centered-container{
   display: flex;
+  width: 100%;
+  height: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content:center;
 }
 
 
@@ -118,10 +125,7 @@ Asepct Ratios
   /* background-color: aqua; */
   width: 305px;
   height: 425px;
-  top: 50%;
-  left:50%;
-  /* transform: translateX(-50%); */
-}
+ }
 
 /* Minimum width 366px, minimum height 510px */
 @media (min-width: 386px) and (min-height: 530px) {
@@ -135,7 +139,7 @@ Asepct Ratios
 /* Minimum width 427px, minimum height 595px */
 @media (min-width: 447px) and (min-height: 615px) {
   .swiper {
-    /* background-color: red; */
+    /* background-color: white; */
     width: 427px;
     height: 595px;
   }

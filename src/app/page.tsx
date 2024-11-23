@@ -17,6 +17,19 @@ const sets = {
     setLogo: '/Logo/dft_logo.png',
     setBackGround: '/Background/dft_background.jpg'
   },
+  
+  innistradRemastered: {
+    setName: 'Innistrad Remastered',
+    setCode: 'inr',
+    setLogo: '/Logo/inr_logo.png',
+    setBackGround: '/Background/inr_background.jpg'
+  },
+  dragonstorm: {
+    setName: 'Tarkir: Dragonstorm',
+    setCode: 'tdm',
+    setLogo: '/Logo/tdm_logo.png',
+    setBackGround: '/Background/tdm_background.jpg'
+  },
 };
 
 export default function Home() {
@@ -34,6 +47,7 @@ return (
       : 'none'
   }}
 >
+  {/* TODO - Add custom Logo sizing depending on image */}
     {showLogo &&
       <Image className='set-Logo' src={SelectedSet.setLogo} alt={`${SelectedSet.setName} Logo`} width={660} height={180}/>
     }

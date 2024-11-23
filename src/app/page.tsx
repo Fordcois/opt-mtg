@@ -23,7 +23,7 @@ export default function Home() {
   const [showCardText,setShowCardText] = useState(true);
   const [showBackGround,setShowBackground] = useState(true);
   const [showLogo,setShowLogo] = useState(true);
-  const SelectedSet = sets.foundations;
+  const SelectedSet = sets.aetherdrift;
 
 return (
 <div

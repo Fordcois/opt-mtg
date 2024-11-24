@@ -36,7 +36,7 @@ export default function Home() {
   const [showCardText,setShowCardText] = useState(true);
   const [showBackGround,setShowBackground] = useState(true);
   const [showLogo,setShowLogo] = useState(true);
-  const SelectedSet = sets.aetherdrift;
+  const SelectedSet = sets.foundations;
 
 return (
 <div
@@ -44,7 +44,7 @@ return (
   style={{
     backgroundImage: showBackGround
       ? `linear-gradient(90deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${SelectedSet.setBackGround})`
-      : 'none'
+      : 'linear-gradient(rgb(0, 255, 0), rgb(0, 255, 0))',
   }}
 >
   {/* TODO - Add custom Logo sizing depending on image */}

@@ -7,7 +7,7 @@ const DescriptionBox: React.FC<{ card: Card }> = ({ card }) => {
 return (
     <div className='description-container'>
       <div className='card-desc-line'>
-        <span>{card.name}</span>
+        {card.name}
         {card.mana_cost && 
           <ManaCost mana_cost={card.mana_cost}/>
         }

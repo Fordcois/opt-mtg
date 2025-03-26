@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Magic Foundations - Opt",
+  title: "Magic - Opt",
   description: "See the upcoming sets in Magic The Gathering - A site made for content creators to showcase previewed cards",
 };
 

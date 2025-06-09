@@ -1,13 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 
-interface ManapipProps {
-  size: number;
-  colour: string;
-}
-
-const Manapip: React.FC<ManapipProps> = ({ size, colour }) => {
-
   const symbolImage = {
     'x': '/manasymbols/mana-x.png',
     '0': '/manasymbols/mana-0.png',
@@ -82,10 +75,24 @@ const Manapip: React.FC<ManapipProps> = ({ size, colour }) => {
     'T':'/manasymbols/mana-t.png',
     'TK':'/manasymbols/mana-tk.png',
   };
+type ManaColour = keyof typeof symbolImage;
 
+interface ManapipProps {
+  size: number;
+  colour: string;
+}
+
+const Manapip: React.FC<ManapipProps> = ({ size, colour }) => {
+  const validColour: ManaColour = 
+    colour in symbolImage ? colour as ManaColour : 'x';
 
   return (
-    <Image src={symbolImage[colour]} alt={colour} height={size} width={size}/>
+    <Image 
+      src={symbolImage[validColour]} 
+      alt={validColour} 
+      height={size} 
+      width={size}
+    />
   );
 };
 

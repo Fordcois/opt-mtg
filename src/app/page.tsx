@@ -30,12 +30,19 @@ const sets = {
     setLogo: '/Logo/tdm_logo.png',
     setBackGround: '/Background/tdm_background.jpg'
   },
+    finalFantasy: {
+    setName: 'MTG: Final Fantasy',
+    setCode: 'fin',
+    setLogo: '/Logo/fin_logo.webp',
+    setBackGround: '/Background/fin_background.jpg'
+  },
 };
 
 export default function Home() {
   const [showCardText,setShowCardText] = useState(true);
   const [showBackGround,setShowBackground] = useState(true);
   const [showLogo,setShowLogo] = useState(true);
+  // Currently Selected Set
   const SelectedSet = sets.dragonstorm;
 
 return (

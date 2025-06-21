@@ -36,6 +36,24 @@ const sets = {
     setLogo: '/Logo/fin_logo.webp',
     setBackGround: '/Background/fin_background.jpg'
   },
+    edgeOfEternities: {
+    setName: 'Edge of Eternities',
+    setCode: 'eoe',
+    setLogo: '/Logo/eoe_logo.webp',
+    setBackGround: '/Background/eoe_background.png'
+  },
+    Spiderman: {
+    setName: "Marvel's Spider-Man",
+    setCode: 'spm',
+    setLogo: '/Logo/ub_logo.png',
+    setBackGround: '/Background/spm_background.webp'
+  },
+    Avatar: {
+    setName: "Avatar: The Last Airbender",
+    setCode: 'tla',
+    setLogo: '/Logo/ub_logo.png',
+    setBackGround: '/Background/spm_background.jpg'
+  },
 };
 
 export default function Home() {
@@ -43,7 +61,7 @@ export default function Home() {
   const [showBackGround,setShowBackground] = useState(true);
   const [showLogo,setShowLogo] = useState(true);
   // Currently Selected Set
-  const SelectedSet = sets.dragonstorm;
+  const SelectedSet = sets.Spiderman;
 
 return (
 <div
@@ -59,10 +77,7 @@ return (
       <Image className='set-Logo' src={SelectedSet.setLogo} alt={`${SelectedSet.setName} Logo`} width={660} height={180}/>
     }
     
-  
       <ScryFallCaller setCode={SelectedSet.setCode} showCardText={showCardText}/>
-
-
 
     {/* Options Buttons */}
     <div className="copyright">

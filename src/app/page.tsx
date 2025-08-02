@@ -61,7 +61,7 @@ export default function Home() {
   const [showBackGround,setShowBackground] = useState(true);
   const [showLogo,setShowLogo] = useState(true);
   // Currently Selected Set
-  const SelectedSet = sets.Spiderman;
+  const SelectedSet = sets.edgeOfEternities;
 
 return (
 <div
